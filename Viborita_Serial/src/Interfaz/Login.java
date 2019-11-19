@@ -5,11 +5,15 @@
  */
 package Interfaz;
 
+import viborita_serial.Viborita_Serial;
+
 /**
  *
  * @author cris
  */
 public class Login extends javax.swing.JFrame {
+    
+    public static int d;
 
     /**
      * Creates new form Login
@@ -112,11 +116,43 @@ public class Login extends javax.swing.JFrame {
 
     private void jbIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbIniciarSesionActionPerformed
 
+        int i=0;//iterador que busca el usuario 
     
         if (jtnombreUsuario.getText().equals("Admin_ORGA") && jtContraseñaUsuario.getText().equals("12345")) {
             this.dispose();//destruir ventana anterior
             new frameAdmin().setVisible(true); // abrir ventana de admin
         }
+        
+        //while que verifica que el usuario y contraseña esten aceptados por el administrador
+        System.out.println("Viborita_Serial.ListaAceptados.size() "+Viborita_Serial.ListaAceptados.size());
+        
+        
+        while (i<Viborita_Serial.ListaAceptados.size()) {
+            
+            System.out.println(Viborita_Serial.ListaAceptados.get(i).usuario);
+            System.out.println(Viborita_Serial.ListaAceptados.get(i).contraseña);
+            System.out.println("-------");
+           
+            
+            if (Viborita_Serial.ListaAceptados.get(i).usuario.equals(jtnombreUsuario.getText()) && Viborita_Serial.ListaAceptados.get(i).contraseña.equals(jtContraseñaUsuario.getText())) {
+                d=i;
+                this.dispose();//destruir ventana anterior
+                new pagUsuario().setVisible(true); // abrir ventana de admin
+                
+                System.out.println("VARIABLE d: "+d);
+                break;
+                
+            }
+            
+            i++;
+        }
+        
+        
+        
+        
+        
+        
+        
         
     }//GEN-LAST:event_jbIniciarSesionActionPerformed
 

@@ -16,6 +16,13 @@ public class pagUsuario extends javax.swing.JFrame {
      */
     public pagUsuario() {
         initComponents();
+        jtNivel.setEditable(false);
+        jtPuntos.setEditable(false);
+        jtTiempo.setEditable(false);
+        jtUsuario.setEditable(false);
+        llenar();
+        this.setLocationRelativeTo(null); // centra el frame en la pantalla
+        this.setResizable(false);
     }
 
     /**
@@ -27,24 +34,116 @@ public class pagUsuario extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jbIniciarJuego = new javax.swing.JButton();
+        jbFinJuego = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jtTiempo = new javax.swing.JTextField();
+        jtPuntos = new javax.swing.JTextField();
+        jtNivel = new javax.swing.JTextField();
+        jtUsuario = new javax.swing.JTextField();
+        jbAcercaDe = new javax.swing.JButton();
+        jbDocumentacion = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(580, 460));
+        setMinimumSize(new java.awt.Dimension(580, 460));
+        setPreferredSize(new java.awt.Dimension(580, 460));
+        getContentPane().setLayout(null);
+
+        jbIniciarJuego.setText("Iniciar Juego");
+        getContentPane().add(jbIniciarJuego);
+        jbIniciarJuego.setBounds(130, 30, 130, 28);
+
+        jbFinJuego.setText("Fin de Juego");
+        jbFinJuego.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbFinJuegoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jbFinJuego);
+        jbFinJuego.setBounds(350, 30, 130, 28);
+
+        jLabel2.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Tiempo");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(50, 110, 110, 32);
+
+        jLabel3.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Puntos");
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(50, 170, 82, 32);
+
+        jLabel4.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Nivel");
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(80, 220, 90, 32);
+
+        jLabel5.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Usuario");
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(40, 290, 110, 32);
+        getContentPane().add(jtTiempo);
+        jtTiempo.setBounds(170, 110, 280, 28);
+        getContentPane().add(jtPuntos);
+        jtPuntos.setBounds(170, 170, 280, 28);
+        getContentPane().add(jtNivel);
+        jtNivel.setBounds(170, 220, 280, 28);
+        getContentPane().add(jtUsuario);
+        jtUsuario.setBounds(170, 290, 280, 28);
+
+        jbAcercaDe.setText("Acerca de");
+        getContentPane().add(jbAcercaDe);
+        jbAcercaDe.setBounds(130, 370, 130, 28);
+
+        jbDocumentacion.setText("Documentacion");
+        getContentPane().add(jbDocumentacion);
+        jbDocumentacion.setBounds(340, 370, 130, 28);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/fondoUsuario.jpg"))); // NOI18N
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(0, 0, 580, 470);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jbFinJuegoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbFinJuegoActionPerformed
+        this.dispose();//destruir ventana anterior
+        new Login().setVisible(true);
+    }//GEN-LAST:event_jbFinJuegoActionPerformed
+
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JButton jbAcercaDe;
+    private javax.swing.JButton jbDocumentacion;
+    private javax.swing.JButton jbFinJuego;
+    private javax.swing.JButton jbIniciarJuego;
+    public javax.swing.JTextField jtNivel;
+    public javax.swing.JTextField jtPuntos;
+    public javax.swing.JTextField jtTiempo;
+    public javax.swing.JTextField jtUsuario;
     // End of variables declaration//GEN-END:variables
+
+public void llenar(){
+    int i = Login.d;
+    jtNivel.setText(viborita_serial.Viborita_Serial.ListaAceptados.get(i).nivelActual);
+    jtPuntos.setText(viborita_serial.Viborita_Serial.ListaAceptados.get(i).puntosActuales);
+    jtTiempo.setText(viborita_serial.Viborita_Serial.ListaAceptados.get(i).tiempoActual);
+    jtUsuario.setText(viborita_serial.Viborita_Serial.ListaAceptados.get(i).usuario);
+
+}
+
 }

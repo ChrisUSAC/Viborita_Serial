@@ -17,7 +17,8 @@ public class Viborita_Serial {
     public static ArrayList<Usuario> ListaAceptados = new ArrayList<Usuario>();
 
     public static void main(String[] args) {
-
+        Usuario nuevo = new Usuario("1", "1", "1", "1", "1");
+        ListaAceptados.add(nuevo);
         
         new Login().setVisible(true);
         
